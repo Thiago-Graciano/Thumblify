@@ -1,12 +1,96 @@
-# React + Vite
+# Thumblify - Gerador de Thumbnails com IA 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto **Full-Stack** que utiliza a stack **MERN** (MongoDB, Express, React e Node.js) em conjunto com a **Google Gemini API** para criar uma ferramenta poderosa de geração de thumbnails para vídeos.
 
-Currently, two official plugins are available:
+## 🛠️ Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Frontend
+- React.js
+- Tailwind CSS
 
-## Expanding the ESLint configuration
+### Backend
+- Node.js
+- Express.js
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Banco de Dados
+- MongoDB Atlas
+
+### Integração de IA
+- Google Gemini API
+
+### Armazenamento de Imagens
+- Cloudinary
+
+---
+
+## ✨ Funcionalidades
+
+- 🔐 **Criação de Conta:** Sistema completo de autenticação de usuários.
+- 🤖 **Gerador com IA:** Defina título, prompt personalizado, proporção, estilo e esquema de cores.
+- 📚 **Histórico:** Visualize todas as suas gerações anteriores.
+- 👀 **Preview:** Visualize como a thumbnail ficaria em um layout do YouTube antes ou depois da geração.
+- 📥 **Download:** Baixe suas criações diretamente da plataforma.
+
+---
+
+## 🚀 Como Rodar o Projeto
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/Thiago-Graciano/Thumblify.git
+```
+
+### 2. Instale as dependências
+
+#### Client
+
+```bash
+cd client
+npm install
+```
+
+#### Server
+
+```bash
+cd ../server
+npm install
+```
+
+### 3. Configure as variáveis de ambiente
+
+Crie um arquivo `.env` na pasta `server` com as seguintes credenciais:
+
+- MongoDB URI
+- Google Gemini API Key
+- Cloudinary Cloud Name
+- Cloudinary API Key
+- Cloudinary API Secret
+
+### 4. Inicie o projeto
+
+```bash
+npm run dev
+```
+
+---
+
+## 📝 Status
+
+Projeto desenvolvido como um desafio de aprendizado **Full-Stack**, com foco em:
+
+- Integração de APIs de Inteligência Artificial
+- Arquitetura MERN
+- Autenticação de usuários
+- Upload e gerenciamento de imagens
+- Deploy em produção
+
+---
+
+## 💡 Objetivo
+
+O objetivo do **Thumblify** é facilitar a criação de thumbnails profissionais utilizando Inteligência Artificial, permitindo que criadores de conteúdo gerem artes personalizadas de forma rápida e eficiente.
+
+---
+
+Desenvolvido com foco em **boas práticas**, **escalabilidade** e **tecnologias modernas**.
