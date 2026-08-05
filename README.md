@@ -43,17 +43,17 @@ git clone https://github.com/Thiago-Graciano/Thumblify.git
 
 ### 2. Instale as dependências
 
-#### Client
+#### Frontend
 
 ```bash
-cd client
+cd frontend
 npm install
 ```
 
-#### Server
+#### Backend
 
 ```bash
-cd ../server
+cd ../backend
 npm install
 ```
 
