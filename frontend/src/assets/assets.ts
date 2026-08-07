@@ -227,9 +227,11 @@ export const yt_html = `
                         <hr class="border-ytBorder" />
                         <p class="px-3 text-xs text-gray-400 uppercase">Subscriptions</p>
                         <a target="_blank" href="https://www.youtube.com/@GreatStackDev?sub_confirmation=1" class="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-yt2"> <img src="https://greatstack.dev/favicon.ico" class="rounded-full size-7" /> GreatStack </a>
+                        <a target="_blank" href="https://www.youtube.com/@1krad1" class="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-yt2"> <img src="https://yt3.googleusercontent.com/fzCQONsX-_37q1Bzh41WUqL4XEH4ZmaM6xJVp4_ztjgXC1PIoelj0m01NZ59imU1yQUzTZ_rcg=s160-c-k-c0x00ffffff-no-rj" class="rounded-full size-7" /> krad </a>
+
+                        <a target="_blank" href="https://www.youtube.com/@Netflix" class="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-yt2"> <img src="https://yt3.googleusercontent.com/3b73AYEMMfa3SX5KJMeygio9smTPvrPrpicuQZbfQ_2DN7dV_ApiRM4CdYjSprEy1YYvt_9b=s160-c-k-c0x00ffffff-no-rj" class="rounded-full size-7" /> Netflix </a>
+                        <a target="_blank" href="https://www.youtube.com/@Google" class="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-yt2"> <img src="https://yt3.googleusercontent.com/bAseQlKvNmjdLQrvYWm_q3QDp8C8YKyYI-nYJewgOkPi0JU1_3X9oFgjrEdzkOlXzLGFxFbnsw=s160-c-k-c0x00ffffff-no-rj" class="rounded-full size-7" /> Google </a>
                         
-                        <a class="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-yt2"> <img src="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2023.ico" class="rounded-full size-7" /> Netflix </a>
-                        <a class="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-yt2"> <img src="https://images.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" class="rounded-full size-7" /> Google </a>
                     </nav>
                 </aside>
                 <!-- ========== MAIN CONTENT ========== -->
