@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react"
 import SoftBackdrop from "../components/SoftBackdrop"
-import { dummyThumbnails, type IThumbnail } from "../assets/assets"
+import { type IThumbnail } from "../assets/assets"
 import { useNavigate, Link } from "react-router-dom"
 import { ArrowUpRightIcon, DownloadIcon, TrashIcon } from "lucide-react"
+import { useAuth } from "../contexts/AuthContext"
+import api from "../configs/api"
+import { toast } from "react-hot-toast"
 
 const MyGenerations = () => {
 
+  const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
 
   const aspectRatioClassMap: Record<string, string> = {
@@ -18,21 +22,42 @@ const MyGenerations = () => {
   const [loading, setLoading] = useState(false)
 
   const fetchThumbnails = async () => {
-    setThumbnails(dummyThumbnails as unknown as IThumbnail[])
-    setLoading(false)
+    try {
+      setLoading(true)
+      const { data } = await api.get("/api/user/thumbnails")
+      setThumbnails(data.thumbnail || [])
+    } catch (error: any) {
+      console.error(error)
+      toast.error(error?.response?.data?.message || error.message)
+    }
   }
 
   const handleDownload = (image_url: string) => {
-    window.open(image_url, "_blank")
+    const link = document.createElement("a");
+    link.href = image_url.replace("/upload/", "/upload/fl_attachment/");
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
   }
 
-  const handleDelete = (id: string) => {
-    console.log(id)
+  const handleDelete = async (id: string) => {
+    try {
+      const confirm = window.confirm("Are you sure you want to delete this thumbnail?")
+      if(!confirm) return;
+      const { data } = await api.delete(`/api/thumbnail/delete/${id}`)
+      toast.success(data.message)
+      setThumbnails(thumbnails.filter((t) => t._id !== id))
+    } catch (error: any) {
+      console.error(error)
+      toast.error(error?.response?.data?.message || error.message)
+    }
   }
 
   useEffect(() => {
-    fetchThumbnails()
-  }, [])
+    if(isLoggedIn) {
+      fetchThumbnails()
+    }
+  }, [isLoggedIn])
 
   return (
     <>
@@ -108,7 +133,7 @@ const MyGenerations = () => {
                     />
                     <Link
                       target="_blank"
-                       to={`/preview?thumbnail_url=${thumb.image_url}&title=${thumb.title}`}
+                      to={`/preview?thumbnail_url=${thumb.image_url}&title=${thumb.title}`}
                     >
                       <ArrowUpRightIcon
                         className="size-6 bg-black/50 p-1 rounded hover:bg-pink-600 transition-all"
