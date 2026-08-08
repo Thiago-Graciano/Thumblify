@@ -45,7 +45,7 @@ export const generateThumbnail = async (req: Request, res: Response) => {
         const model = "gemini-3-pro-image-preview";
 
         const generationConfig: GenerateContentConfig = {
-            maxOutputTokens: 2048, //32768, => mudar depois
+            maxOutputTokens: 32768,
             temperature: 1,
             topP: 0.95,
             responseModalities: ["IMAGE"],
